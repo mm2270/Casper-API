@@ -1,7 +1,6 @@
-### Casper-API
-#####Casper Suite JSS API scripts and applications  
+####Casper-API - Casper Suite JSS API scripts and applications  
 #####This repository contains specific scripts and standalone applications that utilize the Casper Suite API.  
-
+<br>
 ######Get-Network-Segments-as-csv.sh  
 Description:  
 This script was designed to run against a Casper Suite 9.x server to pull down the current Network Segments as a csv file.  
@@ -14,8 +13,8 @@ The resulting csv file will be named "Network-Segments.csv" and moved to your De
 
 **To do:**  
 Currently this script does no error checking. If you supply incorrect credentials, or credentials that do not have access to the Network Segments object, it will simply not work. it will not currently report back with an error. A future version will add some error checking and validation.  
-
-
+<br>
+<br>
 ######Make-StaticGroup-From-SmartGroup.sh  
 Description:  
 This script was designed to run against a Casper Suite 9.x server to create a new Static Computer Group from a Smart Computer Group. The resulting Static Group will contain all the same computer members as the Smart Group.  
