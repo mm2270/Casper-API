@@ -28,4 +28,13 @@ When the script is run, assuming correct API credentials are passed to it, an Ap
 The script will report results in the Terminal window (success or failure)
 
 **To do:**  
-Currently this script only does some minor error checking. It will detect if the supplied credentials did not have the correct Read access permissions. It will also detect if the creation of the Static Group failed. A future version will add some additional error checking and validation for the various steps the script needs to work.
+Currently this script only does some minor error checking. It will detect if the supplied credentials did not have the correct Read access permissions. It will also detect if the creation of the Static Group failed. A future version will add some additional error checking and validation for the various steps the script needs to work.  
+
+<br>
+#####Applications to come (watch this space)  
+
+**Casper-Report-Downloader.app**  
+*Synopsis:* Download any saved Advanced Computer Search in your JSS as a csv file without needing to log into your JSS first.
+
+**Self Service Checker.app**  
+*Synopsis:* View what Self Service.app would show for any Mac in your JSS. Locate the Macs using several different search methods.
