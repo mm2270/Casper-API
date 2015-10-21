@@ -2,9 +2,9 @@
 #####This repository contains specific scripts and standalone applications that utilize the Casper Suite API.  
 <br>
 
-[Get-Network-Segments-as-csv.sh](#get-network-segments-as-csvsh)
-[JSS-Package-Report.sh](#jss-package-reportsh)
-[Make-StaticGroup-From-SmartGroup.sh](#make-staticgroup-from-smartgroupsh)
+[Get-Network-Segments-as-csv.sh](#get-network-segments-as-csvsh)  
+[JSS-Package-Report.sh](#jss-package-reportsh)  
+[Make-StaticGroup-From-SmartGroup.sh](#make-staticgroup-from-smartgroupsh)  
 
 
 ######Get-Network-Segments-as-csv.sh  
