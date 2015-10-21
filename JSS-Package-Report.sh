@@ -15,12 +15,14 @@ apipass="apipassword"
 
 ## JSS URL (Leave off trailing slash)
 jssurl="https://your.jss.org:8443"
-jssBase=$(echo "$jssurl" | sed 's|https://||;s|:8443||')
 
 function finalizeCSV ()
 {
 
 echo -e "Finalizing csv file...\n"
+
+## Set up base JSS name for filename
+jssBase=$(echo "$jssurl" | sed 's|https://||;s|:8443||')
 
 ## Use paste to join all data into a final csv file
 paste -s -d',' "/tmp/workingDir/Packages_temp" >> "/tmp/Packages.csv"
