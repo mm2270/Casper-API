@@ -86,7 +86,7 @@ The final spreadsheet will contain the following column headers:
         <td>REQUIRED PROCESSOR</td><td>Indicates if the <b>Install only if architecture type is:</b> box is checked and the value chosen from the drop down menu</td>
     </tr>
     <tr>
-        <td>SWITCH WITH PACKAGE</td><td>Displays any value chosen from the <b>Substitute Package</b> drop down menu, or <b>Do Not Install<b> if none were selected</td>
+        <td>SWITCH WITH PACKAGE</td><td>Displays any value chosen from the <b>Substitute Package</b> drop down menu, or <b>Do Not Install</b> if none were selected</td>
     </tr>
     <tr>
         <td>INSTALL IF REPORTED AVAILABLE</td><td>(Boolean) Whether the <b>Install Only if Available in Software Update</b> option was checked for the package</td>
