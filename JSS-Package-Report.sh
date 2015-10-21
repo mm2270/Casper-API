@@ -4,6 +4,8 @@
 ## Author:        Mike Morales (mm2270)
 ## Last Modified: 2015-Oct-21
 
+#### Edit items below this line to match your environment ####
+
 ## API Username & Password
 ## Note: API account must have READ access to:
 ##	• Packages
@@ -15,6 +17,9 @@ apipass="apipassword"
 
 ## JSS URL (Leave off trailing slash)
 jssurl="https://your.jss.org:8443"
+
+
+#### No further edits required below this line ####
 
 function finalizeCSV ()
 {
