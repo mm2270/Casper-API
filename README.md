@@ -103,6 +103,12 @@ The final spreadsheet will contain the following column headers:
 </table>
 
 <br>
+**Usage:**  
+`/path/to/JSS-Package-Report.sh`  
+
+The script will output information in Terminal as it runs, explaining steps and indicating which items it is accessing. The final csv file will be moved to your Desktop and named in the format of:
+`your-jss-url_Packages_YYYY-MM-DD.csv`  
+
 **Disclaimer**  
 This script should **ONLY** be used for reference purposes and not relied solely on for determining which packages can be safely deleted from your JSS. While the script *should* help you wittle down the package list to examine more closely, and I have made every effort to make the script generate an accurate report, **I cannot gurantee 100% accuracy** due to unknown variations in each JSS it may be run against.  
 I am not liable for any packages that are deleted which may have had dependencies, and which may cause these dependencies to fail afterwards. As should always be the case, **use discretion** when deciding which items to remove from your JSS.  
