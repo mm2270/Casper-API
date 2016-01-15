@@ -2,10 +2,58 @@
 #####This repository contains specific scripts and standalone applications that utilize the Casper Suite API.  
 <br>
 
+[Create-JSS-Computer-Group-Report.sh](#create-jss-computer-group-reportsh)  
 [Get-Network-Segments-as-csv.sh](#get-network-segments-as-csvsh)  
 [JSS-Package-Report.sh](#jss-package-reportsh)  
 [Make-StaticGroup-From-SmartGroup.sh](#make-staticgroup-from-smartgroupsh)  
+<br>
+######Create-JSS-Computer-Group-Report.sh   
+Description:  
+This script was designed to run against a Casper Suite 9.x server to generate a report on all Computer Groups in the JSS.  
+The resulting report will indicate the group's JSS ID, the group's name, if its a Smart Group and two columns that will show what policies the group is scoped to, which are: 'Policy Scopes' and 'Policy Exclusions'  
 
+**Requirements:**  
+To utilize this script, the JSS API account must have READ access to the following objects:  
+- Computer Groups
+- Policies  
+
+**Usage:**  
+*Make sure to edit the section that contains the API Username, Password and JSS URL before trying to run it.*
+`/path/to/Create-JSS-Computer-Group-Report.sh`  
+The script will display output of the steps and what its working on as it runs.
+
+**Notes:**  
+Due to the large amount of cross referencing the script needs to do between groups and policies to generate an accurate report, on large JSS installations, it can take some time to complete a report. Some reference times I have seen - on a small JSS installation with only around 30 groups and about 40 policies, it completed a report in approximately 5 minutes. On a large JSS with 330+ groups and close to 300 policies, it took around 2 hours to finish a report. So completion time will vary depending on the size and complexity of your JSS.
+
+While I've made every effort to ensure the resulting report is as accurate as possible, I can't gurantee 100% accuracy on all JSS installations since there may be unknown variations I didn't account for. If you see any inconsistencies in the final report, feel free to send me some information and I can see about making the script more accurate.
+Because its impossible to ensure absolute accuracy, **please do not use this script as your sole guidance on which groups can be safely removed.** Always do some of your own investigation to ensure you are not removing anything in use. However, this should at least help in pinpointing the groups to examine more closely.  
+<br>
+<br>
+
+######Create-JSS-Policy-Scope-Report.sh   
+Description:  
+This script was designed to run against a Casper Suite 9.x server to generate a basic scoped related report on all Policies in the JSS.  
+The resulting report will indicate the policy's JSS ID, the policy's name, and five additional columns that will show the following information:  
+**ALL COMPUTERS (SCOPE)** - *Yes or No*  
+**COMPUTERS (SCOPE)** - *individual computers added to scope*  
+**COMPUTER GROUPS (SCOPE)** - *Computer Groups in scope*  
+**LIMITATIONS (SCOPE)** - *Anything added to Limitations, like Network Segments, etc*  
+**EXCLUSIONS (SCOPE)** - *Anything added to Exclusions, like Computer Groups, Network Segments, etc.*  
+
+**Requirements:**  
+To utilize this script, the JSS API account must have READ access to the following objects:  
+- Policies  
+
+**Usage:**  
+*Make sure to edit the section that contains the API Username, Password and JSS URL before trying to run it.*
+`/path/to/Create-JSS-Policy-Scope-Report.sh`  
+The script will display output of the steps and what its working on as it runs.
+
+**Notes:**  
+While I've made every effort to ensure the resulting report is as accurate as possible, I can't gurantee 100% accuracy on all JSS installations since there may be unknown variations I didn't account for. If you see any inconsistencies in the final report, feel free to send me some information and I can see about making the script more accurate.
+Because its impossible to ensure absolute accuracy, **please do not use this script as your sole guidance on which items can be safely removed.** Always do some of your own investigation to ensure you are not removing anything in use. In addition, its possible for some policies to not have available scope other than set to "All Computers" or even no scope and be disabled, but may not be items you will want to remove. **Use your own judgement on what to delete from your JSS!**  
+<br>
+<br>
 
 ######Get-Network-Segments-as-csv.sh  
 Description:  
