@@ -15,7 +15,7 @@
 ## API information, and JSS base URL (leave off trailing slash in JSS URL)
 apiUser="apiusername"
 apiPass="apipassword"
-jssURL="https://your.jss.address:8443"
+jssURL="https://jss-server.address.com:8443"
 
 ## Get current logged in user
 loggedInUser=$(stat -f%Su /dev/console)
