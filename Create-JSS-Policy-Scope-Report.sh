@@ -111,7 +111,8 @@ sed -i "" '/|.*|/d' "${REPORT_BASE}/POLICY_REPORT.csv"
 ## Get the current time at the end of the script run
 endTime=$(date +"%s")
 
-echo "Done. Run time: $((endTime-startTime)) seconds..."
+echo "Run time: $((endTime-startTime)) seconds..."
+echo -e "\nReport complete. The final file is located in: ${REPORT_BASE}/ and is named \"POLICY_REPORT.csv\". Opening enclosing directory...\n"
 
 ## Open the report base directory, which contains the completed csv file.
 sleep 2
