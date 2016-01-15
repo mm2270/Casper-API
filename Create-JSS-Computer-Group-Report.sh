@@ -176,6 +176,10 @@ sed -i "" 's/,TRUE,/,Yes,/g;s/,FALSE,/,No,/g' "${REPORT_BASE}/JSS_GROUPS_REPORT.
 ## Final cleanup commands. Remove the _POLICY_DATA folder that contains the data on each JSS policy
 rm -Rfd "${POLICY_DATA_BASE}"
 
+## Get the current time at the end of the script run
+endTime=$(date +"%s")
+
+echo "Run time: $((endTime-startTime)) seconds..."
 echo -e "\nReport complete. The final file is located in: ${REPORT_BASE}/ and is named \"JSS_GROUPS_REPORT.csv\". Opening enclosing directory...\n"
 
 ## Open the report base directory, which contains the completed csv file.
