@@ -3,6 +3,7 @@
 <br>
 
 [Create-JSS-Computer-Group-Report.sh](#create-jss-computer-group-reportsh)  
+[Create-JSS-Policy-Scope-Report.sh](#create-jss-policy-scope-reportsh)  
 [Get-Network-Segments-as-csv.sh](#get-network-segments-as-csvsh)  
 [JSS-Package-Report.sh](#jss-package-reportsh)  
 [Make-StaticGroup-From-SmartGroup.sh](#make-staticgroup-from-smartgroupsh)  
