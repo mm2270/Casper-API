@@ -1,6 +1,6 @@
 #!/bin/bash
 
-## Script name: convert-sg-search-search-sg.sh
+## Script name: Convert-SG-Search-Search-SG.sh
 ## Author:      Mike Morales
 
 ## Convert an existing Smart Group into Advanced Computer Search or an existing Advanced Computer Search into a Smart Group in your JSS
