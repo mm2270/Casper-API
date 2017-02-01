@@ -10,10 +10,10 @@
 [Make-StaticGroup-From-SmartGroup.sh](#make-staticgroup-from-smartgroupsh)  
 <br>
 ######Convert-SG-Search-Search-SG.sh
-Description:  
+**Description:**  
 This script was designed to be run interactively in Terminal. It allows you to use the API (along with valid API credentials) to convert an existing Smart Computer Group into a new saved Advanced Computer Search, or convert an Advanced Computer Search into a new Smart Computer Group  
 
-**Requirement:**  
+**Requirements:**  
 To utilize this script, the JSS API account must have the following privileges:  
 - READ Smart Computer Groups  
 - READ Advanced Computer Searches  
@@ -34,7 +34,7 @@ To use the script, then do:
 <br>
 <br>
 ######Create-JSS-Computer-Group-Report.sh   
-Description:  
+**Description:**  
 This script was designed to run against a Casper Suite 9.x server to generate a report on all Computer Groups in the JSS.  
 The resulting report will indicate the group's JSS ID, the group's name, if its a Smart Group and two columns that will show what policies the group is scoped to, which are: 'Policy Scopes' and 'Policy Exclusions'  
 
@@ -57,7 +57,7 @@ Because its impossible to ensure absolute accuracy, **please do not use this scr
 <br>
 
 ######Create-JSS-Policy-Scope-Report.sh   
-Description:  
+**Description:**  
 This script was designed to run against a Casper Suite 9.x server to generate a basic scoped related report on all Policies in the JSS.  
 The resulting report will indicate the policy's JSS ID, the policy's name, and five additional columns that will show the following information:  
 **ALL COMPUTERS (SCOPE)** - *Yes or No*  
@@ -82,7 +82,7 @@ Because its impossible to ensure absolute accuracy, **please do not use this scr
 <br>
 
 ######Get-Network-Segments-as-csv.sh  
-Description:  
+**Description:**  
 This script was designed to run against a Casper Suite 9.x server to pull down the current Network Segments as a csv file.  
 To use it, you will need to supply the API credentials within the script. The API account must have at least Read access to the "Network Segments" object in the JSS Objects privileges category.
 
@@ -196,7 +196,7 @@ I am not liable for any packages that are deleted which may have had dependencie
 <br>
 
 ######Make-StaticGroup-From-SmartGroup.sh  
-Description:  
+**Description:**  
 This script was designed to run against a Casper Suite 9.x server to create a new Static Computer Group from a Smart Computer Group. The resulting Static Group will contain all the same computer members as the Smart Group.  
 
 To use it, you will need to supply API credentials (username & password) to the script by passing these in $1 and $2 respectively. The API account must have both **Read** and **Write** access to the "Computer Groups" object in the JSS Objects privileges category.
