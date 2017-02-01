@@ -2,11 +2,36 @@
 #####This repository contains specific scripts and standalone applications that utilize the Casper Suite API.  
 <br>
 
+[Convert-SG-Search-Search-SG.sh](#convert-sg-search-search-sgsh)  
 [Create-JSS-Computer-Group-Report.sh](#create-jss-computer-group-reportsh)  
 [Create-JSS-Policy-Scope-Report.sh](#create-jss-policy-scope-reportsh)  
 [Get-Network-Segments-as-csv.sh](#get-network-segments-as-csvsh)  
 [JSS-Package-Report.sh](#jss-package-reportsh)  
 [Make-StaticGroup-From-SmartGroup.sh](#make-staticgroup-from-smartgroupsh)  
+<br>
+######Convert-SG-Search-Search-SG.sh
+Description:  
+This script was designed to be run interactively in Terminal. It allows you to use the API (along with valid API credentials) to convert an existing Smart Computer Group into a new saved Advanced Computer Search, or convert an Advanced Computer Search into a new Smart Computer Group  
+
+**Requirement:**  
+To utilize this script, the JSS API account must have the following privileges:  
+- READ Smart Computer Groups  
+- READ Advanced Computer Searches  
+- CREATE Smart Computer Groups  
+- CREATE Advanced Computer Searches  
+
+**Special Notes:**  
+Because of the need to use APi credentials with Create privilges, the script allows you to interactively enter the credentials so they don't need to be stored within the script.  
+The script does only minor error checking. Please be sure you use proper API credentials or you will encounter errors.  
+The script will let you choose the Smart Group or Advanced Search to convert into the other type from a list with index values next to their names.  
+**Warning** Because of how the JSS API operates, when converting from a saved search into a Smart Group, there will be a delay as the API runs the full search for the item you select. There isn't a way to only pull the search criteria using the API WITHOUT also running the full search. This means it may take some time for that conversion direction to complete.  
+
+**Usage:**  
+Because this script uses some BASH specific items, please run the following against the script to make it executable before using it:  
+`chmod +x /path/to/Convert-SG-Search-Search-SG.sh`  
+To use the script, then do:  
+`/path/to/Convert-SG-Search-Search-SG.sh`  
+<br>
 <br>
 ######Create-JSS-Computer-Group-Report.sh   
 Description:  
