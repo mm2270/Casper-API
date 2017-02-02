@@ -21,9 +21,11 @@ To utilize this script, the JSS API account must have the following privileges:
 - CREATE Advanced Computer Searches  
 
 **Special Notes:**  
-Because of the need to use APi credentials with Create privilges, the script allows you to interactively enter the credentials so they don't need to be stored within the script.  
-The script does only minor error checking. Please be sure you use proper API credentials or you will encounter errors.  
-The script will let you choose the Smart Group or Advanced Search to convert into the other type from a list with index values next to their names.  
+- Because of the need to use APi credentials with Create privilges, the script allows you to interactively enter the credentials so they don't need to be stored within the script.  
+- The script does only minor error checking. Please be sure you use proper API credentials or you will encounter errors.  
+- The script will let you choose the Smart Group or Advanced Search to convert into the other type from a list with index values next to their names.  
+- By default, when creating new Advanced Computer Searches, the only data column that will be displayed is "Computer Name" Currently it doesn't seem possible to extract the default column view set via the API to inject into the final xml. Feel free to modify the section when creating Advanced Computer Searches with additional view columns if you wish.  
+
 **Warning** Because of how the JSS API operates, when converting from a saved search into a Smart Group, there will be a delay as the API runs the full search for the item you select. There isn't a way to only pull the search criteria using the API WITHOUT also running the full search. This means it may take some time for that conversion direction to complete.  
 
 **Usage:**  
