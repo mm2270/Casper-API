@@ -1,17 +1,17 @@
 #!/bin/bash
 
-## Script name: Convert-SG-Search-Search-SG.sh
-## Author:      Mike Morales
+## Script name:	convert-sg-search-search-sg.sh
+## Author:	Mike Morales
 
 ## Convert an existing Smart Group into Advanced Computer Search or an existing Advanced Computer Search into a Smart Group in your JSS
 
 ## Values for API account information and JSS URL
 ## Notes:
 ## • The API User MUST have these privileges to be used effectively:
-##  - READ Smart Computer Groups
-##  - READ Advanced Computer Searches
-##  - CREATE Smart Computer Groups
-##  - CREATE Advanced Computer Searches
+##		- READ Smart Computer Groups
+##		- READ Advanced Computer Searches
+##		- CREATE Smart Computer Groups
+##		- CREATE Advanced Computer Searches
 ## • These can be hardcoded. If any are left null, the script will prompt you to enter them interactively
 ## • You may hardcode only certain variables, for example only the username and JSS URL, and the script will prompt interactively for the password
 ## • If all left null, the script will prompt to enter each item one by one
@@ -20,7 +20,6 @@ apiUser=""
 apiPass=""
 jssURL=""
 
-## Script starts here
 echo "$(date) - Starting script: ${0}
 "
 
@@ -37,13 +36,9 @@ if [ -z "$jssURL" ]; then
 		echo "
 Use this URL?: ${jssURL}
 
-• Yes - Use the URL presented above
-• No - you will be prompted to enter the JSS URL
-• Exit - Exits the script (you will need to supply the JSS URL in this script)
-
-[y]	Yes
-[n]	No
-[x]	Exit"
+[y]	Yes - Use the URL presented above
+[n]	No - Enter the JSS URL at the prompt
+[x]	Exit - Exit the script (you will need to supply the JSS URL in this script)"
 
 		read urlResponse
 
@@ -58,6 +53,30 @@ Use this URL?: ${jssURL}
 			jssURL="$newURLResponse"
 			;;
 			x|X)
+			echo "Exiting. Goodbye!"
+			exit 0
+			;;
+			*)
+			echo "Invalid response! Please try again"
+			askForjssURL
+			;;
+		esac
+	else
+		echo "
+No JSS URL is specified in the script. Enter it now?
+
+[y]	Yes - Enter the URL at the prompt
+[n]	No/Exit - Exit the script (you will need to supply the JSS URL in this script)"
+
+		read urlResponse
+		
+		case "$urlResponse" in
+			y|Y)
+			echo "Enter the URL:"
+			read userURLResponse
+			jssURL="$userURLResponse"
+			;;
+			n|N)
 			echo "Exiting. Goodbye!"
 			exit 0
 			;;
@@ -82,11 +101,8 @@ if [ -z "$apiPass" ]; then
 	echo "
 No API Password has been supplied. Enter it now?
 
-• Yes - you will be able to type in the password (not shown in the output)
-• No/Exit - you will need to supply the APi Password in the script itself
-
-[y]	Yes
-[n]	No/Exit"
+[y]	Yes - Type in the password (not shown in the output)
+[n]	No/Exit - You will need to supply the APi Password in the script itself"
 
 	read apiPResponse
 
@@ -122,11 +138,8 @@ function askForAPIUser ()
 if [ -z "$apiUser" ]; then
 	echo "No API Username has been supplied. Enter it now?
 
-• Yes - you will be able to type in the Username
-• No/Exit - you will need to supply the API Username in the script itself
-
-[y]	Yes
-[n]	No/Exit"
+[y]	Yes - Type in the Username at the prompt
+[n]	No/Exit - You will need to supply the API Username in the script itself"
 	
 	read apiUResponse
 
@@ -362,15 +375,15 @@ Choose the type of conversion to perform:
 read convChoice
 
 case "$convChoice" in
-	"1")
+	1)
 	echo "Converting from Smart Group to Advanced Search"
 	SGtoAS
 	;;
-	"2")
+	2)
 	echo "Converting from Advanced Search to Smart Group"
 	AStoSG
 	;;
-	"x|X")
+	x|X)
 	echo "Goodbye!"
 	exit 0
 	;;
@@ -387,3 +400,4 @@ askForAPIUser
 
 ## Run function to ask for conversion type
 askForConversionType
+	 
