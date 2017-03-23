@@ -1,5 +1,5 @@
 ####Casper-API - Casper Suite JSS API scripts and applications  
-#####This repository contains specific scripts and standalone applications that utilize the Casper Suite API.  
+####This repository contains specific scripts and standalone applications that utilize the Casper Suite API.  
 <br>
 
 [Convert-SG-Search-Search-SG.sh](#convert-sg-search-search-sgsh)  
