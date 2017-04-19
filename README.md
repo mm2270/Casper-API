@@ -6,6 +6,7 @@
 [Create-JSS-Computer-Group-Report.sh](#create-jss-computer-group-reportsh)  
 [Create-JSS-Policy-Scope-Report.sh](#create-jss-policy-scope-reportsh)  
 [Get-Network-Segments-as-csv.sh](#get-network-segments-as-csvsh)  
+[Install-Configuration-Profiles.sh](#install-configuration-profilessh)  
 [JSS-Package-Report.sh](#jss-package-reportsh)  
 [Make-StaticGroup-From-SmartGroup.sh](#make-staticgroup-from-smartgroupsh)  
 <br>
@@ -95,6 +96,35 @@ The resulting csv file will be named "Network-Segments.csv" and moved to your De
 
 **To do:**  
 Currently this script does no error checking. If you supply incorrect credentials, or credentials that do not have access to the Network Segments object, it will simply not work. it will not currently report back with an error. A future version will add some error checking and validation.  
+<br>
+<br>
+###### Install-Configuration-Profiles.sh  
+**Description:**  
+The Install-Configuration-Profiles.sh script uses the Casper/Jamf Pro API along with supplied API credentials and one or more JSS IDs for Configuration Profiles stored on the server, to download and install them on the target Mac.  
+The script will use either hardcoded API values, if entered in the appropriate locations, or can obtain them as supplied in script parameters.  
+
+$4 for API Username  
+$5 for API Password  
+$6 (Optional) for the JSS URL  
+$7 for the Configuration Profile ID or IDs  
+$8 for the rename flag (explained below)  
+
+**Special notes on the script parameters:**  
+The $6 parameter for the JSS URL is optional, if you plan on using it on managed Macs. If not supplied, the script will determine the JSS URL from the `com.jamfsoftware.jamf.plist` file on the Mac. It can of course be supplied and may be useful for testing profiles that are hosted on a dev JSS for example.  
+
+If multiple IDs are supplied to the $7 script parameter, separated by spaces, the script will determine that it needs to install multiple items and loop over each supplied ID and download and install each one in the order supplied.  
+
+**Rename flag**  
+If the rename flag ($8) is supplied with a positive value (see script for types of accepted values) this setting will direct the script to rename the Configuration Profiles UUID string to something human readable. By default, Configuration Profiles from the JSS are given a unique UUID string that is not easily recognizable. For example, a profile given a display name such as "Office 2016 Settings" may end up with a Unique Identifier string like "A49E0GCF-D800-4B85-B8D4-E10FB6G83EBF" If the above setting is enabled, the script will reset the UUID in the profile xml to something such as "com.acme.office-2016-settings" making it more recognizable when viewed with `sudo profiles -P` in Terminal. The "com.acme" example string is obtained from a hardcoded value in the script called "IDStringStart". Please be sure to change this string if you plan on using the rename function.  
+
+**User Level vs Computer Level Profiles**  
+In addition to the above functions, the script will also attempt to install a profile in the correct space, based on how the profile was created in the JSS. For example, if the profile was set as **User Level**, it will try to install the profile for the current user. If it was set to **Computer Level**, it will install it instead as a Computer Level Profile. If no specific setting was set, it assumes Computer Level and installs it as such.  
+
+**Requirements:**  
+The API account must have read privileges to OS X Configuration Profiles, and you must have at least one Configuration Profile set up in the JSS.  
+
+**Usage:**  
+To use the script from a Jamf Pro/Casper Suite policy, upload or create the script in the JSS. Set up descriptions if desired for Parameters 4 - 8 as described above and in the script. When using the script, be sure to supply at least Parameters 4, 5 and 7 with values. These are the API Username, API Password and at least one Configuration Profile ID from the JSS. Keep in mind all of these can be supplied as hardcoded directly in the script, but you would lose the flexibility of being able to install any profile. It's also less secure to keep API credentials within a script. The script output will show which profile it downloaded and installed and the success or failure exit for each one. If the rename flag is enabled, it will show the renamed profile name in the script output.  
 <br>
 <br>
 ###### JSS-Package-Report.sh
