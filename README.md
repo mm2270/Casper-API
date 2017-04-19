@@ -9,7 +9,7 @@
 [JSS-Package-Report.sh](#jss-package-reportsh)  
 [Make-StaticGroup-From-SmartGroup.sh](#make-staticgroup-from-smartgroupsh)  
 <br>
-######Convert-SG-Search-Search-SG.sh
+###### Convert-SG-Search-Search-SG.sh
 **Description:**  
 This script was designed to be run interactively in Terminal. It allows you to use the API (along with valid API credentials) to convert an existing Smart Computer Group into a new saved Advanced Computer Search, or convert an Advanced Computer Search into a new Smart Computer Group  
 
@@ -35,7 +35,7 @@ To use the script, then do:
 `/path/to/Convert-SG-Search-Search-SG.sh`  
 <br>
 <br>
-######Create-JSS-Computer-Group-Report.sh   
+###### Create-JSS-Computer-Group-Report.sh   
 **Description:**  
 This script was designed to run against a Casper Suite 9.x server to generate a report on all Computer Groups in the JSS.  
 The resulting report will indicate the group's JSS ID, the group's name, if its a Smart Group and two columns that will show what policies the group is scoped to, which are: 'Policy Scopes' and 'Policy Exclusions'  
@@ -58,7 +58,7 @@ Because its impossible to ensure absolute accuracy, **please do not use this scr
 <br>
 <br>
 
-######Create-JSS-Policy-Scope-Report.sh   
+###### Create-JSS-Policy-Scope-Report.sh   
 **Description:**  
 This script was designed to run against a Casper Suite 9.x server to generate a basic scoped related report on all Policies in the JSS.  
 The resulting report will indicate the policy's JSS ID, the policy's name, and five additional columns that will show the following information:  
@@ -83,7 +83,7 @@ Because its impossible to ensure absolute accuracy, **please do not use this scr
 <br>
 <br>
 
-######Get-Network-Segments-as-csv.sh  
+###### Get-Network-Segments-as-csv.sh  
 **Description:**  
 This script was designed to run against a Casper Suite 9.x server to pull down the current Network Segments as a csv file.  
 To use it, you will need to supply the API credentials within the script. The API account must have at least Read access to the "Network Segments" object in the JSS Objects privileges category.
@@ -97,7 +97,7 @@ The resulting csv file will be named "Network-Segments.csv" and moved to your De
 Currently this script does no error checking. If you supply incorrect credentials, or credentials that do not have access to the Network Segments object, it will simply not work. it will not currently report back with an error. A future version will add some error checking and validation.  
 <br>
 <br>
-######JSS-Package-Report.sh
+###### JSS-Package-Report.sh
 **Description:**  
 The JSS-Package-Report.sh script was designed to help with building a spreadsheet of all packages in your JSS, and include information about associations of each package with Policies and Casper Admin Configurations.  
 
@@ -197,7 +197,7 @@ I am not liable for any packages that are deleted which may have had dependencie
 <br>
 <br>
 
-######Make-StaticGroup-From-SmartGroup.sh  
+###### Make-StaticGroup-From-SmartGroup.sh  
 **Description:**  
 This script was designed to run against a Casper Suite 9.x server to create a new Static Computer Group from a Smart Computer Group. The resulting Static Group will contain all the same computer members as the Smart Group.  
 
@@ -213,7 +213,7 @@ The script will report results in the Terminal window (success or failure)
 Currently this script only does some minor error checking. It will detect if the supplied credentials did not have the correct Read access permissions. It will also detect if the creation of the Static Group failed. A future version will add some additional error checking and validation for the various steps the script needs to work.  
 
 <br>
-#####Applications to come (watch this space)  
+##### Applications to come (watch this space)  
 
 **Casper-Report-Downloader.app**  
 *Synopsis:* Download any saved Advanced Computer Search in your JSS as a csv file without needing to log into your JSS first.
