@@ -94,7 +94,7 @@ fi
 
 if [ "$renameID" ]; then
 	case "$renameID" in
-		Y|y|Yes|yes)
+		Y|y|Yes|yes|YES)
 		renameFlag="true"
 		;;
 		N|n|No|no|NO)
