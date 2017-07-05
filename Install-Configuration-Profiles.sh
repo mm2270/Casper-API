@@ -1,8 +1,9 @@
 #!/bin/bash
 
-## Script Name:		Install-Configuration-Profiles.sh
-## Author:	        Mike Morales
-## Last Modified:	2017-Apr-06
+## Script Name:	Install-Configuration-Profiles.sh
+## Author:		Mike Morales
+## Last Modified:	2017-July-04
+## Last Change:	Modified process to obtain Config Profile data. Now gets the profile as xml in one line instead of two.
 
 ## Purpose:
 ## This script will download and install a macOS Configuration Profile(s) that exists in your JSS, using the API
@@ -124,11 +125,7 @@ function download_install_profile ()
 
 ## Pull the profile down in raw URL encoded format
 echo "Obtaining Configuration Profile as xml…"
-Profile=$(curl -H "Accept: text/xml" -sfku "${apiUser}:${apiPass}" "${jssURL}/JSSResource/osxconfigurationprofiles/id/${ID}" -X GET | xmllint --format - | awk '/<payloads>/,/<\/payloads>/{print}' | sed 's/<payloads>//;s/<\/payloads>//;s/^ *//')
-
-## Format the Profile xml, converting URL encoded tags into valid xml tags
-echo "Reformatting html entities in the xml to proper tags…"
-FormattedProfile=$(echo "$Profile" | perl -MHTML::Entities -pe 'decode_entities($_);' | xmllint --format -)
+FormattedProfile=$(curl -H "Accept: text/xml" -sfku "${apiUser}:${apiPass}" "${jssURL}/JSSResource/osxconfigurationprofiles/id/${ID}" -X GET | xpath '/os_x_configuration_profile/general/payloads/text()' | perl -MHTML::Entities -pe 'decode_entities($_);' | xmllint --format -)
 
 ## Obtain the old/original UUID string from the profile xml, store in variable
 echo "Obtaining the old ID string from the xml…"
@@ -149,17 +146,18 @@ if [ "$renameFlag" == "true" ]; then
 	echo "Creating final .mobileconfig file…"
 	echo "$FormattedProfile" | sed "s/$IDStringOld/$IDStringNew/g" > "/tmp/${ID}.mobileconfig"
 
-  ## Set the new Profile name string based on the above obtained information
+	## Set the new Profile name string based on the above obtained information
 	profileName="$IDStringNew"
 else
 	## Create a new profile using the original UUID string within the profile
 	echo "Creating final .mobileconfig file…"
 	echo "$FormattedProfile" > "/tmp/${ID}.mobileconfig"
 
+	## Set the profile name to the existing ID string
 	profileName="$IDStringOld"
 fi
 
-## Output the new profile xml (Used only for testing purposes. Is left commented out here)
+## Output the new profile xml (used only for testing purposes. Is left uncommented out here)
 # echo "$new_formatted_profile"
 
 ## Determine the Payload Scope for the Profile.
