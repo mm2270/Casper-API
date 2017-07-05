@@ -1,9 +1,9 @@
 #!/bin/bash
 
-## Script Name:	Install-Configuration-Profiles.sh
+## Script Name:		Install-Configuration-Profiles.sh
 ## Author:		Mike Morales
 ## Last Modified:	2017-July-04
-## Last Change:	Modified process to obtain Config Profile data. Now gets the profile as xml in one line instead of two.
+## Last Change:		Modified process to obtain Config Profile data. Now gets the profile as xml in one line instead of two.
 
 ## Purpose:
 ## This script will download and install a macOS Configuration Profile(s) that exists in your JSS, using the API
