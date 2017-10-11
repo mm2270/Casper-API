@@ -171,7 +171,7 @@ if [ "$scopeLevel" == "User" ]; then
 	loggedInUID=$(id -u "$loggedInUser")
 
 	echo "Installing Configuration Profile as current user…"
-	/bin/launchctl asuser "$loggedInUID" sudo -iu "$loggedInUser" "/usr/bin/profiles -I -F \"/tmp/${ID}.mobileconfig\""
+	/bin/launchctl asuser "$loggedInUID" sudo -iu "$loggedInUser" /usr/bin/profiles -I -F "/tmp/${ID}.mobileconfig"
 
 	## Capture the exit result of the profile install command
 	res=$?
