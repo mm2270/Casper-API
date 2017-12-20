@@ -234,12 +234,14 @@ This script was designed to run against a Casper Suite 9.x server to create a ne
 To use it, you will need to supply API credentials (username & password) to the script by passing these in $1 and $2 respectively. The API account must have both **Read** and **Write** access to the "Computer Groups" object in the JSS Objects privileges category.
 When the script is run, assuming correct API credentials are passed to it, an Applescript dialog will present on screen with a list of all existing Smart Computer Groups in your JSS. (Note: only Smart Groups are presented in this dialog to avoid selecting any existing Static Group) Select one from the list and click OK to continue to create the new Static Group. The new group name will use the name of the selected Smart Computer Group as a base wtih **_Static** appended to the end.
 
-**Usage:**  
+**Usage:** 
+
 `/path/to/Make-StaticGroup-From-SmartGroup.sh 'apiuser' 'apipassword'`  
 
 The script will report results in the Terminal window (success or failure)
 
 **To do:**  
+
 Currently this script only does some minor error checking. It will detect if the supplied credentials did not have the correct Read access permissions. It will also detect if the creation of the Static Group failed. A future version will add some additional error checking and validation for the various steps the script needs to work.  
 
 <br>
