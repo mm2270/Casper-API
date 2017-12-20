@@ -215,8 +215,8 @@ The final spreadsheet will contain the following column headers:
 </table>
 
 <br>
-**Usage:**  
 
+**Usage:**  
 `/path/to/JSS-Package-Report.sh`  
 
 The script will output information in Terminal as it runs, explaining steps and indicating which items it is accessing. The final csv file will be moved to your Desktop and named in the format of:
@@ -247,8 +247,7 @@ Currently this script only does some minor error checking. It will detect if the
 
 <br>
 
-###### Applications to come (watch this space)  
-
+##### Applications to come (watch this space)  
 **Casper-Report-Downloader.app**  
 *Synopsis:* Download any saved Advanced Computer Search in your JSS as a csv file without needing to log into your JSS first.
 
