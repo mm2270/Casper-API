@@ -227,7 +227,7 @@ I am not liable for any packages that are deleted which may have had dependencie
 <br>
 <br>
 
-###### Make-StaticGroup-From-SmartGroup.sh  
+######Make-StaticGroup-From-SmartGroup.sh  
 **Description:**  
 This script was designed to run against a Casper Suite 9.x server to create a new Static Computer Group from a Smart Computer Group. The resulting Static Group will contain all the same computer members as the Smart Group.  
 
@@ -243,7 +243,7 @@ The script will report results in the Terminal window (success or failure)
 Currently this script only does some minor error checking. It will detect if the supplied credentials did not have the correct Read access permissions. It will also detect if the creation of the Static Group failed. A future version will add some additional error checking and validation for the various steps the script needs to work.  
 
 <br>
-##### Applications to come (watch this space)  
+#####Applications to come (watch this space)  
 
 **Casper-Report-Downloader.app**  
 *Synopsis:* Download any saved Advanced Computer Search in your JSS as a csv file without needing to log into your JSS first.
