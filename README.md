@@ -216,6 +216,7 @@ The final spreadsheet will contain the following column headers:
 
 <br>
 **Usage:**  
+
 `/path/to/JSS-Package-Report.sh`  
 
 The script will output information in Terminal as it runs, explaining steps and indicating which items it is accessing. The final csv file will be moved to your Desktop and named in the format of:
@@ -245,6 +246,7 @@ The script will report results in the Terminal window (success or failure)
 Currently this script only does some minor error checking. It will detect if the supplied credentials did not have the correct Read access permissions. It will also detect if the creation of the Static Group failed. A future version will add some additional error checking and validation for the various steps the script needs to work.  
 
 <br>
+
 ###### Applications to come (watch this space)  
 
 **Casper-Report-Downloader.app**  
