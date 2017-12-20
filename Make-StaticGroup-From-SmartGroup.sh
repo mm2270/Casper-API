@@ -6,7 +6,7 @@
 
 ## The line below is the only line in this script you should need to edit
 ## Set your JSS URL below
-jssurlBase="https://jss-mac.emc.com/"
+jssurlBase="https://yourjssurl.com:8443/"
 
 #### Do not edit below this line ####
 
