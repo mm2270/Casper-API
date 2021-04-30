@@ -61,8 +61,8 @@ while read ID; do
 	mkdir "${POLICY_DATA_BASE}/${ID}"
 
 	echo "$POLICY_NAME" > "${POLICY_DATA_BASE}/${ID}/00_POLICY_NAME"
-	echo "$POLICY_DATA" | xpath /policy/scope/computer_groups[1] 2>/dev/null | xmllint --format - | awk -F'>|<' '/<id>/{print $3}' > "${POLICY_DATA_BASE}/${ID}/01_SCOPE"
-	echo "$POLICY_DATA" | xpath /policy/scope/exclusions/computer_groups[1] 2>/dev/null | xmllint --format - | awk -F'>|<' '/<id>/{print $3}' > "${POLICY_DATA_BASE}/${ID}/03_EXCLUSIONS"
+	echo "$POLICY_DATA" | xmllint --xpath /policy/scope/computer_groups[1] - 2>/dev/null | xmllint --format - | awk -F'>|<' '/<id>/{print $3}' > "${POLICY_DATA_BASE}/${ID}/01_SCOPE"
+	echo "$POLICY_DATA" | xmllint --xpath /policy/scope/exclusions/computer_groups[1] - 2>/dev/null | xmllint --format - | awk -F'>|<' '/<id>/{print $3}' > "${POLICY_DATA_BASE}/${ID}/03_EXCLUSIONS"
 done < <(printf '%s\n' "$ALL_POLICY_IDS")
 
 echo -e "Finished downloading policy information...\n"
